@@ -1,21 +1,14 @@
 <header>
 	<h2><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
 	{{ with .Site.Menus.main }} 
-	<nav>
-		<ul>
-			{{ range . }}
-			<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-			{{ end }}
-		</ul>
-	</nav>
+		{{ range . }}
+			<a href="{{ .URL | relURL }}">{{ .Name }}</a>
+		{{ end }}
 	{{ end }}
+	<br>
 	{{ with .Site.Menus.blog }}
-	<nav>
-		<ul>
-			{{ range . }}
-			<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-			{{ end }}
-		</ul>
-	</nav>
+		{{ range . }}
+			<a href="{{ .URL | relURL }}">{{ .Name }}</a>
+		{{ end }}
 	{{ end }}
 </header>
