@@ -1,6 +1,6 @@
 <header>
 	<h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-	{{ with .Site.Menus.main }}
+	{{ with .Site.Menus.main }} {{ with .Site.Menus.blog }} 
 	<nav>
 		<ul>
 			{{ range . }}
