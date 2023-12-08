@@ -1,12 +1,18 @@
 <header>
 	<h2 style="margin-top:70px"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+	{{ with .Site.Menus.home }}
+		{{ range . }}
+			<a href="{{ .URL | relURL }}">{{ .Name }}</a>
+		{{ end }}
+	{{ end }}
+	<br>
 	{{ with .Site.Menus.main }} 
 		{{ range . }}
 			<a href="{{ .URL | relURL }}">{{ .Name }}</a>
 		{{ end }}
 	{{ end }}
 	<br>
-	{{ with .Site.Menus.blog }}
+	{{ with .Site.Menus.curiculum }} 
 		{{ range . }}
 			<a href="{{ .URL | relURL }}">{{ .Name }}</a>
 		{{ end }}
