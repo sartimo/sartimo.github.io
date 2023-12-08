@@ -1,10 +1,10 @@
 <aside>
 	<div>
 		<div>
-			<h3>LATEST POSTS</h3>
+			<h3>Latest Posts</h3>
 		</div>
 		<div>
-			<ul>
+			<ul style="list-style: none;">
 				{{ range first 5 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
 				<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 				{{ end }}
