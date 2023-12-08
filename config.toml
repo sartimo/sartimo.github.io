@@ -19,7 +19,7 @@ theme = "blank"
 
   [[menu.blog]]
     identifier = "blog"
-    name = "blog"
+    name = "Blog"
     url = "/blog/"
     weight = 10
 
