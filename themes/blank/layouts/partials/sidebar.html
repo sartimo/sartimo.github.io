@@ -4,7 +4,7 @@
 			<h3>Latest Posts (newest atop)</h3>
 		</div>
 		<div>
-			<ul style="list-style: none;">
+			<ul>
 				{{ range (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
 				<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 				{{ end }}
