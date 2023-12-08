@@ -20,7 +20,7 @@ theme = "blank"
   [[menu.home]]
     identifier = "home"
     name = "Home"
-    url = baseURL
+    url = "/"
     weight = 10  
 
   [[menu.curiculum]]
