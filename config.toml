@@ -17,10 +17,16 @@ theme = "blank"
     url = "/about/"
     weight = 10
 
-  [[menu.blog]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/blog/"
+  [[menu.home]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10  
+
+  [[menu.curiculum]]
+    identifier = "curiculum"
+    name = "CV"
+    url = "/curiculum/"
     weight = 10
 
 [taxonomies]
