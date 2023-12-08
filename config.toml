@@ -29,6 +29,12 @@ theme = "blank"
     url = "/curiculum/"
     weight = 10
 
+  [[menu.key]]
+    identifier = "key"
+    name = "key"
+    url = "/key/"
+    weight = 10
+
 [taxonomies]
 category = "categories"
 tag = "tags"
