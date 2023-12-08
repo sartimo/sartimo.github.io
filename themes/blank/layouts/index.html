@@ -1,5 +1,7 @@
 {{ define "main" }}
 	<main>
+		<p>this page is under construction</p>
+		<p>fixme: index content here. put also nav here instead showing on all page. bio goes here too.</p>
 		{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
 		{{ range $paginator.Pages }}
 			{{ .Render "summary" }}
