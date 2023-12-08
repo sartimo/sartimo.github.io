@@ -17,6 +17,12 @@ theme = "blank"
     url = "/about/"
     weight = 10
 
+  [[menu.blog]]
+    identifier = "blog"
+    name = "blog"
+    url = "/blog/"
+    weight = 10
+
 [taxonomies]
 category = "categories"
 tag = "tags"
