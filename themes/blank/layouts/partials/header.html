@@ -17,4 +17,10 @@
 			<a href="{{ .URL | relURL }}">{{ .Name }}</a>
 		{{ end }}
 	{{ end }}
+	<br>
+	{{ with .Site.Menus.tribute }} 
+		{{ range . }}
+			<a href="{{ .URL | relURL }}">{{ .Name }}</a>
+		{{ end }}
+	{{ end }}
 </header>
