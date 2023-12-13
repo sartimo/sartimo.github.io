@@ -29,10 +29,10 @@ theme = "blank"
     url = "/curiculum/"
     weight = 10
 
-  [[menu.key]]
-    identifier = "key"
-    name = "key"
-    url = "/key/"
+  [[menu.tribute]]
+    identifier = "tribute"
+    name = "Tribute"
+    url = "/tribute/"
     weight = 10
 
 [taxonomies]
