@@ -3,17 +3,6 @@ author = "Timo Sarkar"
 title = "Compiling NetHack from Source"
 date = "2024-11-01"
 description = "Tutorial on how to compile NetHack from source on Ubuntu 22.04 LTS"
-tags = [
-    "ubuntu",
-    "games",
-    "roguelike",
-]
-categories = [
-    "games",
-    "linux",
-]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
 +++
 
 First we need to clone the official git repository.
