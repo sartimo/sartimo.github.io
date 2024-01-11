@@ -5,7 +5,7 @@ date = "2024-01-11"
 description = "Tutorial on how to compile NetHack from source on Ubuntu 22.04 LTS"
 +++
 
-First we need to clone the official git repository.
+This is a tutorial on how to compile NetHack from source on Ubuntu 22.04 LTS. First we need to clone the official git repository.
 
 ```bash
 git clone https://github.com/NetHack/NetHack
