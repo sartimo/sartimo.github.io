@@ -1,7 +1,7 @@
 +++
 author = "Timo Sarkar"
 title = "Compiling NetHack from Source"
-date = "2024-11-01"
+date = "2024-01-11"
 description = "Tutorial on how to compile NetHack from source on Ubuntu 22.04 LTS"
 +++
 
@@ -11,7 +11,7 @@ First we need to clone the official git repository.
 git clone https://github.com/NetHack/NetHack
 ```
 
-Keep in mind. We need ```git, gcc, make, flex, bison and ncurses``` installed. Next, we can define the ````HACKDIR``` in the Hintsfile located at ./sys/unix/hints/unix.
+Keep in mind. We need ```git, gcc, make, flex, bison and ncurses``` installed. Next, we can define the ```HACKDIR``` in the Hintsfile located at ./sys/unix/hints/unix.
 Next we need to fetch the lua binary used for scripting within NetHack. We do this using ```make fetch-lua```. Then we need to modify the ./Makefile and the ./src/Makefile to include the NCURSES library instead of termlib.
 
 ![image](https://github.com/sartimo/sartimo.github.io/assets/71646577/dd518eb6-fed3-4a2d-a123-93149297d51b)
