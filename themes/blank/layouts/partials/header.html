@@ -1,5 +1,5 @@
 <header>
-	<h2 style="margin-top:70px">{{ .Site.Title }}</h2>
+	<h2 style="font-size: 34px; margin-top:70px">{{ .Page.Title }}</h2>
 	{{ with .Site.Menus.home }}
 		{{ range . }}
 			<a href="{{ .URL | relURL }}">{{ .Name }}</a>
