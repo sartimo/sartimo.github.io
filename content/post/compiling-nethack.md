@@ -1,6 +1,6 @@
 +++
 author = "Timo Sarkar"
-title = "Compiling NetHack from Source"
+title = "NetHack: compiling from source on ubuntu 22.04 LTS"
 date = "2024-01-11"
 description = "Tutorial on how to compile NetHack from source on Ubuntu 22.04 LTS"
 +++
