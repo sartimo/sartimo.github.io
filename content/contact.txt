@@ -1,6 +1,6 @@
-# contact me
+= contact me
 
-yes you can contact me via this address timosarkar[at]duck[dot]com. you might also consider my openpgp key
+You can contact me via this address timosarkar[at]duck[dot]com. You might also consider my openpgp key:
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: Keybase OpenPGP v2.0.76
