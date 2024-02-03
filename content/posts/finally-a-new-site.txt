@@ -1,0 +1,18 @@
+date: 2024-02-03
+title: Finally a new website!
+
+# Finally a new website!
+
+yes guys. i am again at a certain point where i need to say, it is again time to furtherly optimize my previous site.
+this is the new site. and if you wonder, why it does look like nothing, let me explain. 
+
+this site is written using a simple 53 loc bash script[0]. the bash script is used to generate a html 1.5 compliant site
+using different variables. it dynamically generates this site by recompiling the newest posts into the list on the main site.
+
+as for content, i decided to mainly use pure textfiles. textfiles are ultimately small and extremely portable. 
+the final (non-minified!) overall size of this site is around ~526 bytes (4208 bits). the server-side latency variies around 170ms.
+
+ultimately, i am pretty happy with the outcome. i do not think it is possible to furtherly optimize and minimize this site.
+if you think you are able to do so, please reach out to me :)
+
+[0]: https://raw.githubusercontent.com/sartimo/sartimo.github.io/main/rebuild
