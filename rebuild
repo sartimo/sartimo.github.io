@@ -1,0 +1,59 @@
+#!/bin/bash
+
+remove_if_exists() {
+    local file="$1"
+    if [ -f "$file" ]; then
+        rm "$file"
+    else
+        : # Do nothing
+    fi
+}
+
+remove_if_exists "index.html"
+
+# Start the HTML file
+cat << EOF > index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timo Sarkar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<TT>
+<P># techno-dharmic visioneer, builder and innovator</P>
+<P></P>
+<A HREF='content/about.txt'>About</A>
+<A HREF='content/contact.txt'>Contact</A>
+<A HREF='content/now.txt'>Now</A>
+<P></P>
+EOF
+
+# Function to extract date and title from a post file
+get_date_and_title() {
+    local file="$1"
+    local date=$(sed -n '1s/date: \(.*\)/\1/p' "$file")
+    local title=$(sed -n '2s/title: \(.*\)/\1/p' "$file")
+    echo "$date" "$title"
+}
+
+# Generate list items for files in content/posts directory
+for file in content/posts/*; do
+    if [[ -f $file ]]; then
+        # Extract date and title from the post file
+        info=$(get_date_and_title "$file")
+        date=$(echo "$info" | cut -d ' ' -f 1)
+        title=$(echo "$info" | cut -d ' ' -f 2-)
+
+        # Output list item
+        echo "<LI> $date <A HREF='$file'>$title</A></LI>"
+    fi
+done | sort -r -k2 >> index.html  # Append sorted list items to index.html
+
+# End the HTML file
+cat << EOF >> index.html
+<CENTER>timo sarkar</CENTER>
+</TT>
+</body>
+</html>
+EOF
