@@ -1,0 +1,2 @@
+*.txt linguist-language=AsciiDoc
+*.txt linguist-detectable=True
