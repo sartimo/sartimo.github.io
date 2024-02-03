@@ -1,5 +1,5 @@
 date: 2024-02-03
-title: Manaing tasks using plaintext and bash
+title: Managing tasks
 
 = Managing tasks using plaintext and bash
 
