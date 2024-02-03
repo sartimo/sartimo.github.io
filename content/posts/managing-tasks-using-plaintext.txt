@@ -1,0 +1,31 @@
+date: 2024-02-03
+title: Manaing tasks using plaintext and bash
+
+= Managing tasks using plaintext and bash
+
+I have certainly become a type/plaintext fan. Therefore I like to manage my tasks using a kanban-like method
+on the linux terminal. I wrote a modified todotxt cli to manage your tasks using plaintext on the terminal.
+
+== Installation
+
+Fetch the cli script using git:
+
+$ git clone https://github.com/sartimo/todo
+
+Then change into that directory:
+
+$ cd todo
+
+And then execute the script like that
+
+$ ./todo
+
+== Usage
+
+You can simply add new tasks like that:
+
+$ ./todo add "my new task"
+
+An then list them like so:
+
+$ ./todo ls
