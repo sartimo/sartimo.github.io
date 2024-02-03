@@ -32,10 +32,12 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.head_commit.message, 'BUILD')
     steps:
-      - name: Run rebuild script; ./rebuild
-        run: chmod +x ./rebuild
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Add execution rights to rebuild script
+        run: chmod +x ./rebuild
+      - name: Run rebuild script
+        run: ./rebuild
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4        
