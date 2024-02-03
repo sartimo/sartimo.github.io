@@ -28,7 +28,6 @@ cat << EOF > index.html
 <P></P>
 EOF
 
-# Function to extract date and title from a post file
 get_date_and_title() {
     local file="$1"
     local date=$(sed -n '1s/date: \(.*\)/\1/p' "$file")
@@ -36,18 +35,15 @@ get_date_and_title() {
     echo "$date" "$title"
 }
 
-# Generate list items for files in content/posts directory
 for file in content/posts/*; do
     if [[ -f $file ]]; then
-        # Extract date and title from the post file
         info=$(get_date_and_title "$file")
         date=$(echo "$info" | cut -d ' ' -f 1)
         title=$(echo "$info" | cut -d ' ' -f 2-)
 
-        # Output list item
         echo "<LI> $date <A HREF='$file'>$title</A></LI>"
     fi
-done | sort -r -k2 >> index.html  # Append sorted list items to index.html
+done | sort -r -k2 >> index.html
 
 cat << EOF >> index.html
 <CENTER>timo sarkar</CENTER>
