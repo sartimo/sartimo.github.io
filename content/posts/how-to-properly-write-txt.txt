@@ -1,0 +1,11 @@
+date: 2024-02-02
+title: How to properly write plaintext
+
+= How to properly write plaintext
+
+In this post I will outline my most common practices on how I write content using plaintext. 
+I usually either use markdown for media-rich content or Asciidoc for minimal and lightweight content.
+
+== Syntax overview
+
+https://powerman.name/doc/asciidoc
