@@ -1,7 +1,16 @@
-# about me
+= About Me
 
 *beep* this page is under construction *beep*
 
 hi there,
 
-My name is Timo Sarkar, and this is my blog. I currently work as a IT Systemsengineer. Due to my passion for technology, I built this blog to keep all my important thoughts and findings on one place. You can consider me a techno-dharmic visioneer and builder. I do mostly align with the principles of effective-accelerationism (e/acc).
+My name is Timo Sarkar, and this is my blog. I currently work as a IT-Systemsengineer in apprenticeship. Due to my passion for technology, I built this blog to keep all my important thoughts and findings on one place. You can consider me a techno-dharmic visioneer and builder. I do mostly align with the principles of effective-accelerationism (e/acc).
+
+= About this page
+
+This page is all about minimalism and true techno-zen. I love the principles of zen-buddhism in combination with well executed technology.
+This page reflects all of that. The static sources are generated using a 53 lines-of-code bash script. The content and posts are organized using pure textfiles 
+modeled after the semantics and syntax of AsciiDoc. Other than that, there are no stylings or any in-line style tags. Also, no JavaScript or any other injections are made. I wanted the site to be as naked as possible, so I can focus on writing distractionless content. Also, maintenance of this site is pretty easy.
+
+== Deployment and CI/CD
+
