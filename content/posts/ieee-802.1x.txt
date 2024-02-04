@@ -3,3 +3,32 @@ title: Brief overview on IEEE 802.1x
 
 = What is IEEE 802.1x (dot1x)
 
+IEEE 802.1x from now on referred as dot1x is a protocol standardization by IEEE to enhance port-based security through authentication, autorisation and accounting (AAA). 
+
+== Building blocks of IEEE 802.1x 
+
+The main components for a dot1x network are:
+
+- Supplicant: This is a common term for endpoints dealing with dot1x such as laptops, desktops and other devices
+- Authenticator: This is a common term for the middle-ware used for configuring the network for the supplicant access after successfull authentication. Usually these are devices such as Switches.
+- Authentication Server: This usually is a server or a service that processes the authentication and decides upon the authentication result based on multiple factors like a policy-ruleset. A common Auth-Server is the Cisco Identity-Services-Engine (ISE).
+
+== Ways of authentication
+
+There are several ways and methods that can lead to a successfully working dot1x implementation. Here are the most important ones covered.
+
+=== EAP-TLS
+
+todo
+
+=== EAP-PEAP
+
+todo
+
+=== EAP-FAST
+
+todo
+
+=== Mac-Authentication Bypass (MAB)
+
+todo
