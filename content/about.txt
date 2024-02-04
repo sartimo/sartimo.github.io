@@ -9,8 +9,74 @@ My name is Timo Sarkar, and this is my blog. I currently work as a IT-Systemseng
 = About this page
 
 This page is all about minimalism and true techno-zen. I love the principles of zen-buddhism in combination with well executed technology.
-This page reflects all of that. The static sources are generated using a 53 lines-of-code bash script. The content and posts are organized using pure textfiles 
+This page reflects all of that. The static sources are generated using a 53 lines-of-code bash script[1]. The content and posts are organized using pure textfiles 
 modeled after the semantics and syntax of AsciiDoc. Other than that, there are no stylings or any in-line style tags. Also, no JavaScript or any other injections are made. I wanted the site to be as naked as possible, so I can focus on writing distractionless content. Also, maintenance of this site is pretty easy.
 
 == Deployment and CI/CD
 
+The code for the site is archived on [GitHub](https://github.com/sartimo/sartimo.github.io/). Deployment is done via GitHub Pages using a conditional CD.
+
+== Domain
+
+[The deployed site](https://sartimo.github.io) contains a custom CNAME record that points to a domain *.cli.rs. I found this free subdomain and configured it for this site. Also it think it is very short and cool since it ends with .rs which is the file-extension for the Rust programming-language. 
+
+== Appendix
+
+[1]: source code for the bash script generating this site:
+
+[source, bash]
+----
+#!/bin/bash
+
+remove_if_exists() {
+    local file="$1"
+    if [ -f "$file" ]; then
+        rm "$file"
+    else
+        : # Do nothing
+    fi
+}
+
+remove_if_exists "index.html"
+
+cat << EOF > index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timo Sarkar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<TT>
+<P># techno-dharmic visioneer, builder and innovator</P>
+<P></P>
+<A HREF='content/about.txt'>About</A>
+<A HREF='content/contact.txt'>Contact</A>
+<A HREF='content/now.txt'>Now</A>
+<P></P>
+EOF
+
+get_date_and_title() {
+    local file="$1"
+    local date=$(sed -n '1s/date: \(.*\)/\1/p' "$file")
+    local title=$(sed -n '2s/title: \(.*\)/\1/p' "$file")
+    echo "$date" "$title"
+}
+
+for file in content/posts/*; do
+    if [[ -f $file ]]; then
+        info=$(get_date_and_title "$file")
+        date=$(echo "$info" | cut -d ' ' -f 1)
+        title=$(echo "$info" | cut -d ' ' -f 2-)
+
+        echo "<LI> $date <A HREF='$file'>$title</A></LI>"
+    fi
+done | sort -r -k2 >> index.html
+
+cat << EOF >> index.html
+<CENTER>timo sarkar</CENTER>
+</TT>
+</body>
+</html>
+EOF
+----
