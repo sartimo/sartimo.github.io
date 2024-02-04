@@ -1,0 +1,66 @@
+date: 2024-02-04
+title: Enable IEEE 802.1x using Ansible
+
+= Enable IEEE 802.1x using Ansible on a Cisco Catalyst 9200L
+
+This is mainly me playing around with Ansible (network-automation tool) to get bulk-configs done for 802.1x. 
+If the time is ripe, I will furtherly elaborate my thoughts on this topic. For now, here is a sample ansible config that does that.
+
+[source, yaml]
+----
+- name: Configure 802.1X on Cisco Catalyst 9200L
+  hosts: switches
+  gather_facts: no
+  vars:
+    ise_server_ip: "ISE_SERVER_IP_ADDRESS"
+    ise_radius_key: "RADIUS_SHARED_KEY"
+    certificate_name: "WINDOWS_CERTIFICATE_NAME"
+
+  tasks:
+    - name: Enable AAA new-model
+      ios_command:
+        commands:
+          - "aaa new-model"
+        authorize: yes
+        with_items:
+          - "aaa authentication dot1x default group radius"
+          - "aaa authorization network default group radius"
+
+    - name: Configure RADIUS server
+      ios_command:
+        commands:
+          - "radius server ISE_SERVER_IP_ADDRESS"
+          - "address ipv4 ISE_SERVER_IP_ADDRESS auth-port 1812 acct-port 1813"
+          - "key RADIUS_SHARED_KEY"
+        authorize: yes
+
+    - name: Enable dot1x globally
+      ios_command:
+        commands:
+          - "dot1x system-auth-control"
+        authorize: yes
+
+    - name: Configure 802.1X on interface
+      ios_config:
+        lines:
+          - "interface {{ item }}"
+          - "dot1x pae authenticator"
+          - "dot1x timeout reauth-period server"
+          - "authentication event server dead action authorize vlan 999"
+          - "authentication event server alive action reinitialize"
+          - "authentication host-mode multi-domain"
+          - "authentication order dot1x mab"
+          - "authentication priority dot1x mab"
+          - "authentication port-control auto"
+          - "mab"
+          - "dot1x credentials WINDOWS_CERTIFICATE_NAME"
+        authorize: yes
+        with_items:
+          - "GigabitEthernet1/0/1"  # Change this to the interface you want to configure
+
+    - name: Save configuration
+      ios_command:
+        commands:
+          - "write memory"
+        authorize: yes
+----
