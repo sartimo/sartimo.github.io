@@ -46,6 +46,7 @@ for file in content/posts/*; do
 done | sort -r -k2 >> index.html
 
 cat << EOF >> index.html
+<P></P>
 <CENTER>timo sarkar</CENTER>
 </TT>
 </body>
