@@ -1,4 +1,4 @@
-date: 2024-02-02
+date: 2024/02/02
 title: How to properly write plaintext
 
 = How to properly write plaintext
