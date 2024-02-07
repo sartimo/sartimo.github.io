@@ -1,4 +1,4 @@
-date: 2024-02-04
+date: 2024/02/04
 title: Enable IEEE 802.1x using Ansible
 
 = Enable IEEE 802.1x using Ansible on a Cisco Catalyst 9200L
