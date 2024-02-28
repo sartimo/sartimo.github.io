@@ -1,0 +1,18 @@
+{% if page.taxonomies %}
+
+  {% set_global term_names = [] %}<!---->
+  {% for term_name, terms in page.taxonomies %}<!---->
+  {% set_global term_names = term_names | concat(with=term_name) %}<!---->
+  {% endfor %}<!---->
+  <ul class="post-module--tags--1RXVQ">
+
+  {% for term_name in term_names | sort %}
+
+    {% for term in page.taxonomies[term_name] %}
+
+    <li class="post-module--tagItem--kUy9P"><a class="post-module--tagItemLink--2UVyU" href="{{ get_taxonomy_url(kind=term_name, name=term) | safe }}">{{ term }}</a></li>
+
+    {% endfor %}
+  {% endfor %}
+</ul>
+{% endif %}

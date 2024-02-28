@@ -1,0 +1,24 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="{{ lang }}">
+  {% include "partials/head.html" %}
+  <body>
+    {% include "partials/header.html" %}
+    <div class="layout-module--parent--S2h1M">
+      <main class="layout-module--main--16H54">
+        {% block main %}
+
+          <div class="index-module--home--UKgeX">
+              <h1>
+                  I'm a partner at <a href="https://a16z.com/">a16z</a> where I focus on <a href="https://future.a16z.com/why-web3-matters/">web3</a>. My interests include programming, philosophy, history, internet, startups,
+                  and investing.
+              </h1>
+              <p><a href="https://cdixon.substack.com/subscribe">Sign up to receive new blog posts by email.</a></p>
+              <p><em>Selected writing:</em></p>
+              {% include "partials/page_list.html" %}
+          </div>
+        {% endblock main %}
+      </main>
+    </div>  
+
+  </body>
+</html>

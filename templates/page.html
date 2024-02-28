@@ -1,0 +1,27 @@
+{% extends "index.html" %}<!---->
+
+
+{% block main %}
+
+
+
+  <main class="layout-module--main--16H54">
+      <div class="blog-post-container">
+          <div class="blog-post">
+              <h1 class="post-module--title--37tBS">{{ page.title }}</h1>
+              {% include "partials/page_info.html" %}
+              <div>
+                <div class="blog-post-content post-module--body--2O2N-">
+                  {{ page.content | safe }}
+                </div>
+              </div>
+          </div>  
+      <!-- Post Taxonomies -->
+      {% include "partials/post_taxonomies.html" %}<!---->
+      <!-- Post Nav -->
+      {% include "partials/post_navigation.html" %}<!---->
+      {% include "partials/footer.html" %}
+
+    {% endblock main %}
+    </main>
+</div>

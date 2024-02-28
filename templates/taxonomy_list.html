@@ -1,0 +1,12 @@
+{% extends "index.html" %}<!---->
+{% block main %}
+<!-- Taxonomy Title -->
+<h1 class="mb-16">{{ taxonomy.name | title }}</h1>
+<!-- Taxonomies -->
+  {% for term in terms %}
+    <ul>
+    <li><a href="{{ term.permalink }}">{{ term.name }}</a></li>
+    </ul>
+  {% endfor %}<!---->
+  <p><a href="/tags">All tags</a></p>
+{% endblock main %}

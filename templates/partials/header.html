@@ -1,0 +1,49 @@
+<div id="___gatsby">
+  <div style="outline: none;" tabindex="-1" id="gatsby-focus-wrapper">
+      <header class="header-module--header--2Q3RK">
+          <nav class="header-module--nav--3m-_Y">
+              <a aria-current="page" class="" href="/">
+                  <div class="header-module--navLeft--1-jKj">
+                      <img src="https://cdixon.org/static/cdixon-avatar-7ad99eaa3541df7cfb2d4756da936efc.png" class="header-module--navLeftImage--1rY1B" alt="Logo" />
+                      <div class="header-module--navLeftBrand--YVBm8" href="https://ts.cli.rs/cdixon-rebuild/">cdixon</div>
+                  </div>
+              </a>
+              <ul class="header-module--navRight--3Rp6Q">
+                {% for menu in config.extra.menu %}
+                <li class="header-module--navList--3Bg3S">
+                  <a
+                    class="header-module--linkStyle--2tnMX"
+                    href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+                    >{{ menu.name }}</a
+                  >
+                </li>
+                {% endfor %}
+              </ul>
+          </nav>
+          <script>
+            // base
+            const htmlClass = document.documentElement.classList;
+            setTimeout(() => {
+              htmlClass.remove("not-ready");
+            }, 10);
+      
+            // mobile menu
+            const btnMenu = document.querySelector(".btn-menu");
+            btnMenu?.addEventListener("click", () => {
+              htmlClass.toggle("open");
+            });
+          </script>    
+    </header>
+  </div>
+</div>
+
+
+
+
+      
+
+
+
+
+    
+    

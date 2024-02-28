@@ -1,0 +1,23 @@
+{% extends "index.html" %}<!---->
+{% block main %}<!---->
+{% set section = get_section(path=page.extra.section) %}<!---->
+
+{% for year, posts in section.pages | group_by(attribute="year") %}
+
+<div class="not-prose pl-6">
+  <ul>
+    {% for post in posts %}
+    <li>
+      <div class="blog-post">
+        <h1><a class="secondary-link" href="{{ post.permalink }}">{{ post.title }}</a></h1>
+        <time class="post-module--date--1g0_w">{{ post.date | date }}</time>
+        <p class="blog-post-content post-module--body--2O2N-">{{ post.description }}</p>
+      </div>
+    </li>
+
+    {% endfor %}
+  </ul>
+</div>
+
+{% endfor %}<!---->
+{% endblock main %}

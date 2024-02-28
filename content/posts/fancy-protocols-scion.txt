@@ -1,6 +1,0 @@
-date: 2024/02/04
-title: Fancy protocols: SCION
-
-= What is SCION
-
-todo

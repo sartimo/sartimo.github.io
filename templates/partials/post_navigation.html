@@ -1,0 +1,12 @@
+{% if page.lower or page.higher %}
+
+
+<div class="post-module--bottomNav--2f6l_">
+  {% if page.higher %}
+  <div class="post-module--navLinkContainer--2v9tr">Previous post: <a class="post-module--bottomNavLink--AvEhl" href="{{ page.higher.permalink }}">{{ page.higher.title }}</a></div>
+  {% endif %}
+  {% if page.lower %}
+  <div class="post-module--navLinkContainer--2v9tr">Next post: <a class="post-module--bottomNavLink--AvEhl" href="{{ page.lower.permalink }}">{{ page.lower.title }}</a></div>
+  {% endif %}
+</div>
+{% endif %}

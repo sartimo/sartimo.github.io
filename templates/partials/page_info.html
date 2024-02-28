@@ -1,0 +1,6 @@
+<div class="text-sm antialiased opacity-60">
+  {% if page.date %}
+  <div class="post-module--date--1g0_w">{{ page.date | date }}</div>
+  {% endif %}
+  {% set single_author = page.extra.author | default(value=config.author) %}
+</div>

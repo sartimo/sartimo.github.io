@@ -1,0 +1,113 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    {% if page.title %}{{ page.title }} - {{ config.title }}{% else %}{{ config.title }}{% endif %}
+  </title>
+
+  <!-- Meta -->
+  <meta data-react-helmet="true" name="description" content="Chris Dixon&#x27;s blog." />
+        <meta data-react-helmet="true" property="og:title" content="home" />
+        <meta data-react-helmet="true" property="og:description" content="Chris Dixon&#x27;s blog." />
+        <meta data-react-helmet="true" property="og:type" content="website" />
+        <meta data-react-helmet="true" name="twitter:card" content="summary" />
+        <meta data-react-helmet="true" name="twitter:creator" content="@cdixon" />
+        <meta data-react-helmet="true" name="twitter:title" content="home" />
+        <meta data-react-helmet="true" name="twitter:description" content="Chris Dixon&#x27;s blog." />
+  <meta name="theme-color" content="#663399" />
+
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Author -->
+  {% if page %}
+  <meta name="description" content="{{ page.summary | default(value=page.title) | safe }}" />
+  <meta name="author" content="{{ page.extra.author | default(value=page.title) }}" />
+  {% else %}
+  <meta name="description" content="{{ config.description | default(value=`A personal blog`) }}" />
+  <meta name="author" content="{{ config.author | default(value=config.title) }}" />
+  {% endif %}
+  <style type="text/css">
+    .gatsby-resp-image-image {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        vertical-align: middle;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: transparent;
+    }
+</style>
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="{{ get_url(path=`main.css`) }}" />
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400|Roboto:400,500|Roboto+Mono:400|Martel+Sans:700|Alegreya:500|Crimson+Text:400,400i,700|Chivo:700" rel="stylesheet" />
+
+  {% if section.path is defined and section.path == "/" %}
+  <!-- Avatar -->
+  {% if config.extra.profile.avatar_url %}
+  <link rel="preload" as="image" href="{{ get_url(path=config.extra.profile.avatar_url) }}" />
+  {% endif %}
+
+  <!-- Social List -->
+  {% if config.extra.profile.social %}
+  <!---->
+  {% for social in config.extra.profile.social %}
+  <link rel="preload" as="image" href="{{ get_url(path=`icons/` ~ social.name ~ `.svg`) }}" />
+  {% endfor %}
+  <!---->
+  {% endif %}
+  <!---->
+  {% endif %}
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="{{ get_url(path=`icons/` ~ `theme.svg`) }}" />
+
+  <!-- Math -->
+  {% if page.extra.math | default(value=config.extra.math) %}
+  <!---->
+  {% include "partials/math.html" %}
+  <!---->
+  {% endif %}
+  <!---->
+
+  <!-- Mermaid -->
+  {% if page.extra.mermaid | default(value=config.extra.mermaid) %}
+  <!---->
+  {% include "partials/mermaid.html" %}
+  <!---->
+  {% endif %}
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ get_url(path=`favicon.ico`) }}" />
+  <link rel="apple-touch-icon" href="{{ get_url(path=`apple-touch-icon.png`) }}" />
+
+  <!-- Feeds -->
+  {% if config.generate_feed %}
+  <!---->
+  {% if config.feed_filename == "atom.xml" %}
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="{{ get_url(path=`atom.xml`) }}"
+  />
+  {% elif config.feed_filename == "rss.xml" %}
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href="{{ get_url(path=`rss.xml`) }}"
+  />
+  {% endif %}
+  <!---->
+  {% endif %}
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ page.permalink | default(value=get_url(path=``)) }}" />
+</head>

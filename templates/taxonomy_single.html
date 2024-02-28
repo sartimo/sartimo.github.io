@@ -1,0 +1,8 @@
+{% extends "index.html" %}<!---->
+{% block main %}
+<!-- Term Title -->
+<h1 class="mb-16">{{ term.page_count }} Posts tagged with "{{ term.name }}"</h1>
+<br>
+<!-- Pages -->
+{% include "partials/page_list.html" %}<!---->
+{% endblock main %}
