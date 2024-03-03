@@ -95,8 +95,8 @@ name = "Blog"
 url = "$BASE_URL/archive"
 
 [[extra.menu]]
-name = "Twitter"
-url = "https://twitter.com/cdixon"
+name = "Linkedin"
+url = "https://ch.linkedin.com/in/timosarkar"
 #url = "$BASE_URL/archive"
 
 
